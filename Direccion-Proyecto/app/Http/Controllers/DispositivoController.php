@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Dispositivos;
 use Illuminate\Http\Request;
+use App\Models\Dispositivo;
+use DB;
 
-class DispositivosController extends Controller
+class DispositivoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,9 @@ class DispositivosController extends Controller
      */
     public function index()
     {
-        //
+        return view('dispositivo.index',[
+            'dispositivos' => Dispositivo::all()
+        ]);
     }
 
     /**
